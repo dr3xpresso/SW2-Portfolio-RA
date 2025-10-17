@@ -1,10 +1,12 @@
 # Portfolio Part 2: Component Proof-of-Concept
 
-- **Name**: Robert Ashley
-- **Dot Number**: ashley.184
-- **Due Date**: Oct 17
+- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
+- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
+- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
 
 ## Assignment Overview
+
+<!-- TODO: read the assignment overview then delete this comment -->
 
 Previously, you brainstormed three ideas, and hopefully you got some feedback as
 well. However, it's impossible to know how reasonable your design actually is
@@ -28,6 +30,8 @@ the more work you can put in now, the better.
 
 ## Assignment Checklist
 
+<!-- TODO: browse the checklist then delete this comment -->
+
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -49,6 +53,8 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
+<!-- TODO: read the assignment learning objectives then delete this comment -->
+
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -61,6 +67,8 @@ project. Specifically, students should be able to:
 3. Assemble a minimal working implementation of one of their designs
 
 ## Assignment Rubric: 10 Points
+
+<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,19 +114,8 @@ Below is further rationale/explanation for the rubric items above:
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
 
-My top design is the music playlist soley because I think it is the most achieveable to create. My favorite design is the trick tracker, but I feel like there are too many things to store for one thing that implemeting any method for it would be a ridiculous amount of work. That being said, however, I still rerally like the music playlist idea and I have a few ideas for it that could make it really cool. I'd like to make it in a way so it acts both like a playlist and also like a music queue. The secondary methods I came up with in the first part of this project I no longer like (except for flip) and I have a few new ideas to replace them.
-
-1. Flip stays
-2. MoveToFront - moves this to the front of the queue and does not change order
-3. Add - Adds this to the playlist BUT asks the user if they are sure if they want to add a duplicate and offers another option. (This could be split into two methods maybe and handled in main).
-3a. isDuplicate - helper method to above.
-4. Remove - Removes this. If duplicate entries exist than just removes one.
-5. RemoveFront / Skip - Removes the front of this.
-6. Shuffle - Shuffles the order of this. Not sure about if it'll be random or not though.
-7. Move to back - moves this to the back of the playlist
-8. StartFrom - makes this the front of the queue, keeps order after, and loops around the the front elements. Different from movetofront because multiple elements change their spot instead of just one.
-
-The playlist concept should not be a challenge to implement. I plan on storing song name with artist, any more information that goes with a song could be significantly harder to design and implement. The other interfaces seemed like they would require more values per main key and would be harder to create. Thinking about real world applications, a music playlist is probably the most useful of the three ideas I had. It's flexibility to easily add and remove items gives it more use than the photo library or trick tracker which would most likely only be used for storing and not removing.
+<!-- TODO: briefly argue your choice of design or design something
+new; then delete this comment -->
 
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
@@ -128,6 +125,8 @@ The playlist concept should not be a challenge to implement. I plan on storing s
 > VSCode to run git commands. It's entirely up to you. Regardless of your choice,
 > we'll want a branch that you can later make a pull request from with all
 > your changes.
+
+<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
