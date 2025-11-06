@@ -15,31 +15,14 @@ import components.standard.Standard;
 public interface PlaylistKernel extends Standard<Playlist> {
 
     /**
-     * Nested class representing a song with name and artist.
+     * Java record representing a song with its name and artist.
+     *
+     * @param name
+     *            the name of the song
+     * @param artist
+     *            the artist of the song
      */
-    public static class Song {
-        /**
-         * Name of the song.
-         */
-        public String name;
-
-        /**
-         * Artist of the song.
-         */
-        public String artist;
-
-        /**
-         * Constructor for Song.
-         *
-         * @param name
-         *            the name of the song
-         * @param artist
-         *            the artist of the song
-         */
-        public Song(String name, String artist) {
-            this.name = name;
-            this.artist = artist;
-        }
+    public record Song(String name, String artist) {
     }
 
     /**
@@ -60,8 +43,9 @@ public interface PlaylistKernel extends Standard<Playlist> {
      * @updates this
      * @requires song is in this
      * @ensures this = #this with the first occurrence of song removed
+     * @return the removed song
      */
-    void removeSong(Song song);
+    Song removeSong(Song song);
 
     /**
      * Reports length of {@code this}.
@@ -72,11 +56,22 @@ public interface PlaylistKernel extends Standard<Playlist> {
     int size();
 
     /**
-     * Removes the first song from {@code this}.
+     * Removes and returns the first song from {@code this}.
      *
      * @updates this
-     * @requires this /= <>
-     * @ensures #this = <removed song> * this
+     * @requires |this| > 0
+     * @ensures #this = <removeLastSong> * this
+     * @return the removed song
      */
-    void removeLastSong();
+    Song removeLastSong();
+
+    /**
+     * Reports whether {@code song} is in {@code this}.
+     *
+     * @param song
+     *            the song to check for
+     * @return true if {@code song} is in {@code this}, false if not
+     * @ensures hasSong = (song is in this)
+     */
+    boolean hasSong(Song song);
 }
