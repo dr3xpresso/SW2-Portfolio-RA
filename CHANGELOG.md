@@ -6,10 +6,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## 2024.09.19
+## 2025.11.06
+
+### Added
+
+- Created the PlaylistSecondary abstract class
+
+### Updated
+
+- Changed the Song subclass into a Java record
+- Added a hasSong kernel method (updated in interfaces branch)
+- Changed removeSong and RemoveLastSong to now return what was removed (updated in interfaces branch)
+- Changed the javadoc comment for removeLastSong because it was wrong.
+
+## 2025.10.25
+
+### Added
+
+- Designed kernel and enhanced interfaces for playlist component
+
+### Updated
+
+- Changed design to include playlistKernel and playlist interfaces
+- Shuffle and startFrom methods introduced.
+- Added Song subclass to PlaylistKernel
+- Changed method headers in the interfaces to change from generic song type to song
+- Changed method headers in the playlist enhanced interface to treat Queue<Pair<S, A>> as this
+
+## 2025.09.19
 
 ### Added
 
 - Designed a music playlist component
-- Designed a trick trackercomponent
+- Designed a trick tracker component
 - Designed a photo library component
+
+.
