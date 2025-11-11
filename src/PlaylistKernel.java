@@ -56,7 +56,7 @@ public interface PlaylistKernel extends Standard<Playlist> {
     int size();
 
     /**
-     * Removes and returns the first song from {@code this}.
+     * Removes and returns the last song from {@code this}.
      *
      * @updates this
      * @requires |this| > 0
