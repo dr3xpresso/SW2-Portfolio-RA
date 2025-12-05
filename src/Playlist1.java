@@ -9,8 +9,9 @@ import components.queue.Queue1L;
  * @param <Song>
  *            type of {@code Playlist} entries
  * @correspondence this = entries($this.rep)
+ * @convention <this.rep> is not null
  */
-public class Playlist1<Song> extends PlaylistSecondary<Song> {
+public class Playlist1 extends PlaylistSecondary {
 
     /*
      * Private members --------------------------------------------------------
@@ -43,6 +44,31 @@ public class Playlist1<Song> extends PlaylistSecondary<Song> {
      * Standard methods -------------------------------------------------------
      */
 
+    public final Playlist<Song> newInstance() {
+        try {
+            return this.getClass().getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new AssertionError(
+                    "Cannot construct object of type " + this.getClass());
+        }
+    }
+
+    public final void clear() {
+        this.createNewRep();
+    }
+
+    public final Playlist<Song> transferFrom(Playlist<Song> source) {
+        assert source != null : "Violation: source is not null";
+        assert source != this : "Violation: source is not this";
+
+        Playlist1<Song> localSource = (Playlist1<Song>) source;
+        this.rep = localSource.rep;
+        localSource.createNewRep();
+    }
+
+    /*
+     * Kernel methods --------------------------------------------------------x
+     */
     @Override
     void addSong(Song song) {
         this.rep.enqueue(song);
