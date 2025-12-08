@@ -79,10 +79,6 @@ public class Playlist1 extends PlaylistSecondary {
         assert this.hasSong(song) : "Violation: song is not in this!";
 
         Queue<Song> temp = this.rep.newInstance();
-        /*
-         * couldnt figure out a way to make the variable nothing outside the
-         * loop so I used null
-         */
         Song removed = null;
         boolean removedFirst = false;
 
