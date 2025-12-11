@@ -1,8 +1,9 @@
+package components.playlist;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import components.playlist.Playlist;
 import components.playlist.PlaylistKernel.Song;
 
 /**
@@ -65,7 +66,7 @@ public abstract class PlaylistTest {
      */
 
     @Test
-    public void testClearNone() {
+    public void testClear() {
         Playlist newPlaylist = this.createFromArgs(A, B, C);
         newPlaylist.clear();
         assertEquals(this.constructorTest(), newPlaylist);

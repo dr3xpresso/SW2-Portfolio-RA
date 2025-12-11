@@ -179,24 +179,26 @@ public abstract class PlaylistSecondary implements Playlist {
         assert this.hasSong(song) : "Violation of: song is in this";
 
         Playlist before = this.newInstance();
-        Playlist songPlusAfter = this.newInstance();
+        Playlist after = this.newInstance();
 
         Song current = this.removeLastSong();
         while (!current.equals(song)) {
-            before.addSong(current);
+            after.addSong(current);
             current = this.removeLastSong();
         }
 
-        songPlusAfter.addSong(current);
-
         while (this.size() > 0) {
-            songPlusAfter.addSong(this.removeLastSong());
+            before.addSong(this.removeLastSong());
         }
 
         Playlist result = this.newInstance();
-        while (songPlusAfter.size() > 0) {
-            result.addSong(songPlusAfter.removeLastSong());
+
+        result.addSong(current);
+
+        while (after.size() > 0) {
+            result.addSong(after.removeLastSong());
         }
+
         while (before.size() > 0) {
             result.addSong(before.removeLastSong());
         }

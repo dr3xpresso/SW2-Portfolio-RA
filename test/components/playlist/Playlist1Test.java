@@ -1,5 +1,4 @@
-import components.playlist.Playlist;
-import components.playlist.Playlist1;
+package components.playlist;
 
 /**
  * Customized JUnit test fixture for {@code Playlist1}.
