@@ -1,3 +1,5 @@
+package components.playlist;
+
 /**
  * Layered implementations of secondary methods for {@code Playlist}.
  */
@@ -119,7 +121,7 @@ public abstract class PlaylistSecondary implements Playlist {
     }
 
     @Override
-    void moveToBack(Song song) {
+    public final void moveToBack(Song song) {
         assert this.size() >= 2 : "Violation of: |this| >= 2";
         assert this.hasSong(song) : "Violation of: song is in this";
 
@@ -149,11 +151,10 @@ public abstract class PlaylistSecondary implements Playlist {
     }
 
     @Override
-    void shuffle() {
+    public final void shuffle() {
         assert this.size() >= 2 : "Violation of: |this| >= 2";
 
         Playlist temp = this.newInstance();
-        int initialSize = this.size();
 
         while (this.size() > 0) {
             temp.addSong(this.removeLastSong());
@@ -181,7 +182,7 @@ public abstract class PlaylistSecondary implements Playlist {
     }
 
     @Override
-    void startFrom(Song song) {
+    public final void startFrom(Song song) {
         assert this.size() >= 2 : "Violation of: |this| >= 2";
         assert this.hasSong(song) : "Violation of: song is in this";
 

@@ -1,6 +1,9 @@
-package components.playlsit;
+package components.playlist;
 
-public interface playlist extends PlaylistKernel {
+/**
+ *
+ */
+public interface Playlist extends PlaylistKernel {
 
     /**
      * Flips the order of {@code this}.
@@ -37,8 +40,6 @@ public interface playlist extends PlaylistKernel {
      */
     void moveToBack(Song song);
 
-    //shuffle is a new one from part 2
-
     /**
      *
      * Shuffles the order of {@code this}.
@@ -49,8 +50,6 @@ public interface playlist extends PlaylistKernel {
      *          randomized order
      */
     void shuffle();
-
-    //startFrom is another new one from part 2
 
     /**
      * Moves {@code song} to the front of {@code this} and moves everything that
