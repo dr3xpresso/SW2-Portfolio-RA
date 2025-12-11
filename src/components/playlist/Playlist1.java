@@ -111,8 +111,14 @@ public class Playlist1 extends PlaylistSecondary {
     public final Song removeLastSong() {
         assert this.rep.length() > 0 : "Violation of: |this| > 0";
 
-        this.rep.flip();
+        Queue<Song> temp = this.rep.newInstance();
+
+        while (this.rep.length() > 1) {
+            temp.enqueue(this.rep.dequeue());
+        }
         Song removed = this.rep.dequeue();
+
+        this.rep.transferFrom(temp);
 
         return removed;
     }

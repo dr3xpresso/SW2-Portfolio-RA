@@ -104,20 +104,20 @@ public abstract class PlaylistSecondary implements Playlist {
         assert this.size() >= 2 : "Violation of: |this| >= 2";
         assert this.hasSong(song) : "Violation of: song is in this";
 
+        Song removed = this.removeSong(song);
+
         Playlist temp = this.newInstance();
-        Song current = this.removeLastSong();
-
-        while (!current.equals(song)) {
-            temp.addSong(current);
-            current = this.removeLastSong();
+        while (this.size() > 0) {
+            temp.addSong(this.removeLastSong());
         }
 
-        this.addSong(song);
-
+        Playlist result = this.newInstance();
+        result.addSong(removed);
         while (temp.size() > 0) {
-            Song s = temp.removeLastSong();
-            this.addSong(s);
+            result.addSong(temp.removeLastSong());
         }
+
+        this.transferFrom(result);
     }
 
     @Override
@@ -125,28 +125,20 @@ public abstract class PlaylistSecondary implements Playlist {
         assert this.size() >= 2 : "Violation of: |this| >= 2";
         assert this.hasSong(song) : "Violation of: song is in this";
 
-        Playlist before = this.newInstance();
-        Playlist after = this.newInstance();
+        Song removed = this.removeSong(song);
 
-        Song current = this.removeLastSong();
-        while (!current.equals(song)) {
-            before.addSong(current);
-            current = this.removeLastSong();
-        }
-
+        Playlist temp = this.newInstance();
         while (this.size() > 0) {
-            after.addSong(this.removeLastSong());
+            temp.addSong(this.removeLastSong());
         }
 
-        while (before.size() > 0) {
-            this.addSong(before.removeLastSong());
+        Playlist result = this.newInstance();
+        while (temp.size() > 0) {
+            result.addSong(temp.removeLastSong());
         }
+        result.addSong(removed);
 
-        while (after.size() > 0) {
-            this.addSong(after.removeLastSong());
-        }
-
-        this.addSong(song);
+        this.transferFrom(result);
 
     }
 
@@ -188,26 +180,29 @@ public abstract class PlaylistSecondary implements Playlist {
 
         Playlist before = this.newInstance();
         Playlist songPlusAfter = this.newInstance();
-        Song current = this.removeLastSong();
 
-        while (current != song) {
+        Song current = this.removeLastSong();
+        while (!current.equals(song)) {
             before.addSong(current);
             current = this.removeLastSong();
         }
 
-        songPlusAfter.addSong(song);
+        songPlusAfter.addSong(current);
 
         while (this.size() > 0) {
             songPlusAfter.addSong(this.removeLastSong());
         }
 
+        Playlist result = this.newInstance();
         while (songPlusAfter.size() > 0) {
-            this.addSong(songPlusAfter.removeLastSong());
+            result.addSong(songPlusAfter.removeLastSong());
+        }
+        while (before.size() > 0) {
+            result.addSong(before.removeLastSong());
         }
 
-        while (before.size() > 0) {
-            this.addSong(before.removeLastSong());
-        }
+        this.transferFrom(result);
+
     }
 
 }
