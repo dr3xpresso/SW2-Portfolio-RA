@@ -6,11 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+
 ## 2025.12.05
 
 ### Updated
 
 - Added standard kernel method implementations
+
+## 2025.11.21
+
+### Added
+
+- Designed the kernel implementation for Playlist
+
+### Updated
+
+- Completed the kernel implementation on Queue
+- Updated the component 05 assignment
+- Created the new Playlist1 file
 
 ## 2025.11.06
 

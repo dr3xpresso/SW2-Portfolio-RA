@@ -1,8 +1,8 @@
 # Portfolio Part 5: Kernel Implementation
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Robert Ashley
+- **Dot Number**: ashley.184
+- **Due Date**: 12:40 PM 11/21
 
 ## Assignment Overview
 
@@ -40,7 +40,7 @@ examples of these.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
+
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -120,7 +120,12 @@ Below is further rationale/explanation for the rubric items above:
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+
+The main representation I would like to do is Playlist on Queue. I think that other than for one or two  of Playlist's kernel methods, queue's own methods work perfect for the implementation. Queue is a first in first out data structure, and Playlist needs some of that FIFO functionality so its a good fit. 
+
+I think I want to make it like the sequence1L implementation where there is no convention. I'm chosing this because similar data structures in OSU components also do not have a convention and I think its because there's not an incorrect way to implement them. Playlist is simple and allows duplicates, so I can't think of any specific rules an implementation needs to follow that would be in convention. 
+
+As for the correspondance, I am also going to model this after a lot of the correspondances I've looked at in the OSU components. I have it as "this = entries($this.rep)" because the playlist is represented exactly by the entries in rep.
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
@@ -142,7 +147,6 @@ Below is further rationale/explanation for the rubric items above:
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
@@ -163,7 +167,7 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
+
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -198,7 +202,7 @@ request merge (or at least tag your commits). This is not required.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
+
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
