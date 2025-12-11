@@ -36,7 +36,7 @@ public abstract class PlaylistTest {
     private Playlist createFromArgsTest(Song... args) {
         Playlist playlist = this.constructorTest();
         for (Song s : args) {
-            playlist.add(s);
+            playlist.addSong(s);
         }
         return playlist;
     }
@@ -48,12 +48,12 @@ public abstract class PlaylistTest {
      * @param args
      *            the entries for the set
      * @return the constructed playlist
-     * @ensures createFromArgsTest = [entries in args]
+     * @ensures createFromArgsRef = [entries in args]
      */
-    private Playlist createFromArgsTest(Song... args) {
-        Playlist playlist = this.constructorTest();
+    private Playlist createFromArgsRef(Song... args) {
+        Playlist playlist = this.constructorRef();
         for (Song s : args) {
-            playlist.add(s);
+            playlist.addSong(s);
         }
         return playlist;
     }
